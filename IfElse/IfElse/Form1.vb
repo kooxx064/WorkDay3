@@ -11,8 +11,18 @@ Public Class Form1
         Dim st1 As String = txtFirstNum.Text
         Dim st2 As String = txtSecondNum.Text
 
+        If Not (IsNumeric(st1) And IsNumeric(st2)) Then
+            MessageBox.Show("Please Enter In Numbers")
+            Return
+        End If
+
         num1 = CDbl(st1)
         num2 = CDbl(st2)
+
+        If Not (num1 >= 0 And num2 >= 0) Then
+            MessageBox.Show("Please enter in non-negative numbers")
+            Return
+        End If
 
         Dim result As String
 
@@ -24,7 +34,12 @@ Public Class Form1
             result = "They are equal"
         End If
 
+
+
         txtResult.Text = result
+
+
+
     End Sub
 
 End Class
